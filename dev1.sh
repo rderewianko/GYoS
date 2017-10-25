@@ -96,7 +96,7 @@ workLoc.tooltip = Please Select Your Location.
 
 # Add a text field menu
 workAddress.type = textfield
-workAddress.label = If Remote, Enter Shipping Address:
+workAddress.label = If Remote, Please Enter Shipping Address:
 workAddress.width = 310
 workAddress.default = 
 workAddress.x = 0
