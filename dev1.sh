@@ -20,9 +20,9 @@ fullTitle="Welcome to the $itemName Store."
 
 if [[ $itemApproval == "1" ]]
 then
-    displayMessage="This item requires approval; it will be ordered when approved.[return][return]$itemName - Cost \$$itemCost[return][return]Please complete this form to finalize the order.[return][return]If in a local office, we will contact you when the item is ready for pickup from the Help Desk. If remote, we will order the item for delivery to be shipped to your location."
+    displayMessage="This item requires approval; it will be ordered when approved.[return][return]Item - $itemName[return]Cost - \$$itemCost[return][return]Please complete this form to finalize the order.[return][return]If in a local office, we will contact you when the item is ready for pickup from the Help Desk. If remote, we will order the item for delivery to be shipped to your location."
 else 
-    displayMessage="$itemName - Cost \$$itemCost[return][return]Please complete this form to finalize the order.[return][return]If in a local office, we will contact you when the item is ready for pickup from the Help Desk. If remote, we will order the item for delivery to be shipped to your location."
+    displayMessage="Item - $itemName[return]Cost - \$$itemCost[return][return]Please complete this form to finalize the order.[return][return]If in a local office, we will contact you when the item is ready for pickup from the Help Desk. If remote, we will order the item for delivery to be shipped to your location."
 fi
 
 
