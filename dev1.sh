@@ -18,6 +18,13 @@ userName="$3"
 
 fullTitle="Welcome to the $itemName Store."
 
+if [[ $itemApproval == "1" ]]
+then
+    displayMessage="$itemName - Cost \$$itemCost[return][return]Please complete this form to finalize the order.[return][return]If in a local office, we will contact you when the item is ready for pickup from the Help Desk. If remote, we will order the item for delivery to be shipped to your location.[return][return]This item requires approval; it will be ordered when approved."
+else 
+    displayMessage="$itemName - Cost \$$itemCost[return][return]Please complete this form to finalize the order.[return][return]If in a local office, we will contact you when the item is ready for pickup from the Help Desk. If remote, we will order the item for delivery to be shipped to your location."
+fi
+
 
 if [[ ! -a "$pashLoc$pashuaApp" ]]
 then
@@ -41,7 +48,7 @@ conf="
 
 # Introductory text
 txt.type = text
-txt.default = $itemName - Cost \$$itemCost[return]To complete your request for $itemname please fill out the information on this form. If in a local office, we will contact you when the item is ready for pickup from the Help Desk. If remote, we will order the item for delivery to be shipped to your location.[return]Some items require approval; if so, the item will be ordered when approved.
+txt.default = $displayMessage
 txt.height = 276
 txt.width = 325
 txt.x = 340
@@ -137,7 +144,7 @@ then
 	customLocation='/Volumes/Pashua'
 else
 	# Search for Pashua in the standard locations
-	customLocation="$pashloc"
+	customLocation="$pashLoc"
 fi
 
 # Get the icon from the application bundle
