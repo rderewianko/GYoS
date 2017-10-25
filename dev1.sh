@@ -41,7 +41,7 @@ conf="
 
 # Introductory text
 txt.type = text
-txt.default = Pashua is an application for generating dialog windows from programming languages which lack support for creating native GUIs on Mac OS X. Any information you enter in this example window will be returned to the calling script when you hit “OK”; if you decide to click “Cancel” or press “Esc” instead, no values will be returned.[return][return]This window shows nine of the UI element types that are available. You can find a full list of all GUI elements and their corresponding attributes in the documentation (➔ Help menu) that is included with Pashua.
+txt.default = $itemName - Cost \$$itemCost[return]To complete your request for $itemname please fill out the information on this form. If in a local office, we will contact you when the item is ready for pickup from the Help Desk. If remote, we will order the item for delivery to be shipped to your location.[return]Some items require approval; if so, the item will be ordered when approved.
 txt.height = 276
 txt.width = 325
 txt.x = 340
@@ -137,7 +137,7 @@ then
 	customLocation='/Volumes/Pashua'
 else
 	# Search for Pashua in the standard locations
-	customLocation=''
+	customLocation="$pashloc"
 fi
 
 # Get the icon from the application bundle
