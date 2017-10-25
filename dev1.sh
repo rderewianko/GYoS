@@ -85,23 +85,23 @@ email.tooltip = Please Enter Your Email Address.
 
 # Add a popup menu
 workLoc.type = popup
-workLoc.label = Work Location:
+workLoc.label = Delivery Location:
 workLoc.width = 310
-workLoc.option = Office
+workLoc.option = Headquarters
 workLoc.option = Remote
-workLoc.default = Popup menu item #1
+workLoc.default = Headquarters
 workLoc.x = 0
 workLoc.y = 135
 workLoc.tooltip = Please Select Your Location.
 
 # Add a text field menu
 workAddress.type = textfield
-workAddress.label = Work Address:
+workAddress.label = If Remote, Enter Shipping Address:
 workAddress.width = 310
 workAddress.default = 
 workAddress.x = 0
 workAddress.y = 90
-workAddress.tooltip = Please Enter Your Work Address.
+workAddress.tooltip = Shipping address only needed if a remote employee.
 
 # Add a text field menu
 city.type = textfield
