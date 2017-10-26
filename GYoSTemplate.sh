@@ -125,6 +125,7 @@ fullName.default =
 fullName.width = 310
 fullName.x = 0
 fullName.y = 275
+fullName.mandatory = 1
 fullName.tooltip = Please Enter Your Full Name.
 
 # Add a text field
@@ -134,6 +135,7 @@ userID.default = $userName
 userID.width = 310
 userID.x = 0
 userID.y = 230
+userID.mandatory = 1
 userID.tooltip = Please Enter Your Associate ID.
 
 
@@ -144,6 +146,7 @@ email.default =
 email.width = 310
 email.x = 0
 email.y = 185
+email.mandatory = 1
 email.tooltip = Please Enter Your Email Address.
 
 # Add a popup menu
@@ -151,7 +154,7 @@ workLoc.type = popup
 workLoc.label = Delivery Location:
 workLoc.width = 310
 workLoc.option = Headquarters
-workLoc.option = Remote
+workLoc.option = Remote (Address Required)
 workLoc.default = Headquarters
 workLoc.x = 0
 workLoc.y = 135
@@ -185,13 +188,13 @@ state.y = 45
 state.tooltip = Please Enter Your State.
 
 # Add a text field menu
-zip.type = textfield
-zip.label = State:
-zip.width = 50
-zip.default = 
-zip.x = 227
-zip.y = 45
-zip.tooltip = Please Enter Your Zip.
+zipCode.type = textfield
+zipCode.label = State:
+zipCode.width = 50
+zipCode.default = 
+zipCode.x = 227
+zipCode.y = 45
+zipCode.tooltip = Please Enter Your Zip.
 
 # Add a cancel button with default label
 cancel.type = cancelbutton
@@ -236,7 +239,9 @@ User ID - $userID
 Email Address - $email
 Work Location - $workLoc
 Work Address - $workAddress
-City - $City
+City - $city
+State - $state
+Zip = $zipCode
 Item Selected - $itemName
 Item Cost - $itemCost
 Item URL - $itemURL
@@ -247,8 +252,41 @@ EOL
 }
 
 #Run Pashua with the config.
-pashua_run "$conf" "$customLocation"
+function main()
+{
+    pashua_run "$conf" "$customLocation"
 
+	if [[ "$workLoc" == "Headquarters" ]]
+	then
+		if [[ $workAddress == "" ]]
+		then
+			workAddress="N/a"
+		fi
+		if [[ $city == "" ]]
+		then
+			city="N/a"
+		fi
+		if [[ $state == "" ]]
+		then
+			state="N/a"
+		fi
+		if [[ $zipCode == "" ]]
+		then
+			zipCode="N/a"
+		fi
+	elif [[ "$workLoc" == "Remote (Address Required)" ]]
+	then
+		if [[ $workAddress == "" ]] || [[ $city == "" ]] || [[ $state == "" ]] || [[ $zipCode == "" ]]
+		then
+			#Re-Run Pashua
+			main
+		fi
+	fi
+	
+}
+
+#kick off Pashua via Function
+main
 #Create Conf File
 createConf
 
@@ -261,5 +299,5 @@ echo "  Work Location = $workLoc"
 echo "  Work Address = $workAddress"
 echo "  City = $city"
 echo "  State = $state"
-echo "  Zip = $zip"
+echo "  Zip = $zipCode"
 echo ""
