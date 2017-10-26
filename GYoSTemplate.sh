@@ -234,21 +234,8 @@ fi
 
 function createConf() {
 cat >/tmp/itemOrder.conf <<EOL
-Full Name - ${fullName}
-User ID - $userID
-Email Address - $email
-Work Location - $workLoc
-Work Address - $workAddress
-City - $city
-State - $state
-Zip = $zipCode
-Item Selected - $itemName
-Item Cost - $itemCost
-Item URL - $itemURL
-Approval Needed - $itemApproval
-... 
+Full Name - $fullName\n User ID - $userID\n Email Address - $email\n Work Location - $workLoc\n Work Address - $workAddress\n City - $city\n State - $state\n Zip = $zipCode\n Item Selected - $itemName\n Item Cost - $itemCost\n Item URL - $itemURL\n Approval Needed - $itemApproval\n
 EOL
-
 }
 
 #Run Pashua with the config.
