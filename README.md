@@ -27,6 +27,12 @@ Get Your Stuff (GYoS) is a customizable framework for creating an Item Store in 
 
   ![Image of Script Options](https://i.imgur.com/EWKrE61.png)
 
+### Create a SendGrid account
+
+* Create an account at https://sendgrid.com/free/
+  * This will allow 100 emails per day for free. If you scale higher than this, paid options are available.
+* Create an API Key, and add to the beginning of the script in Jamf
+
 ### Create a policy for the Item you would like to be ordered.
 
 * You will need:
