@@ -8,7 +8,7 @@ pashLoc="/Applications/Utilities/"
 pashuaApp="Pashua.app"
 
 pashBinLoc="/Applications/Utilities/Pashua.app/Contents/MacOS/Pashua"
-
+SENDGRID_API_KEY="$8"
 
 itemName="$4"
 itemURL="$5"
@@ -100,6 +100,42 @@ pashua_run() {
     done
 
     IFS="$oldIFS"
+}
+
+function sendEmail(){
+
+    emailBody=$(cat /tmp/itemOrder.conf)
+    
+    emailContent=$(cat  << EOF
+    {
+      "personalizations": [
+        {
+          "to": [
+            {
+              "email": "email@company.com"
+            }
+          ],
+          "subject": "Item needs order"
+        }
+      ],
+      "from": {
+        "email": "gyosBot@gyos.com"
+      },
+      "content": [
+        {
+          "type": "text/plain",
+          "value": '"$emailBody"'
+        }
+      ]
+    }
+    EOF
+    )
+
+    curl --request POST \
+      --url https://api.sendgrid.com/v3/mail/send \
+      --header "Authorization: Bearer $SENDGRID_API_KEY" \
+      --header 'Content-Type: application/json' \
+      -d "$emailContent"
 }
 
 # Define what the dialog should be like
@@ -285,7 +321,8 @@ function main()
 main
 #Create Conf File
 createConf
-
+#Send the email
+sendEmail
 
 echo "Pashua created the following variables:"
 echo "  Full Name  = $fullName"
