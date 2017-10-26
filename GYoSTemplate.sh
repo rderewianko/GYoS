@@ -189,7 +189,7 @@ state.tooltip = Please Enter Your State.
 
 # Add a text field menu
 zipCode.type = textfield
-zipCode.label = State:
+zipCode.label = Zip:
 zipCode.width = 50
 zipCode.default = 
 zipCode.x = 227
@@ -198,7 +198,7 @@ zipCode.tooltip = Please Enter Your Zip.
 
 # Add a cancel button with default label
 cancel.type = cancelbutton
-cancel.tooltip = This is an element of type “cancelbutton”
+cancel.tooltip = Cancel
 
 db.type = defaultbutton
 db.tooltip = This is an element of type “defaultbutton” (which is automatically added to each window, if not included in the configuration)
@@ -254,6 +254,15 @@ EOL
 #Run Pashua with the config.
 function main()
 {
+    fullName=""
+    userID=""
+    email=""
+    workLoc=""
+    workAddress=""
+    city=""
+    state=""
+    zipCode=""
+        
     pashua_run "$conf" "$customLocation"
 
 	if [[ "$workLoc" == "Headquarters" ]]
