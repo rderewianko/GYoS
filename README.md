@@ -14,7 +14,8 @@ Get Your Stuff (GYoS) is a customizable framework for creating an Item Store in 
 ### Install Pashua from Jamf, then Hide the Application
 
 * The application is installed to `/Applications/Utilities/` by the .pkg.
-* The Jamf Policy installs the .pkg, then using a `Files and Processes` action, runs `chflags hidden /Application/Utilities/Pashua.app` to hide the application, as you can't direcly open the application.
+* Create a Jamf Policy that installs the .pkg, then using a `Files and Processes` action to run `chflags hidden /Application/Utilities/Pashua.app` to hide the application.
+* Scope to All Computer and All Users, set to Ongoing, and set it to run from the Custom Event `installPashua`
 
 ### Script installed to Jamf Pro
 
