@@ -29,6 +29,7 @@ Get Your Stuff (GYoS) is a customizable framework for creating an Item Store in 
   * Parameter 5 - `itemURL`
   * Parameter 6 - `itemApproval`
   * Parameter 7 - `itemCost`
+  * Parameter 8 - `SENDGRID_API_KEY`
 
   ![Image of Script Options](https://imgur.com/8oBl4XA.png)
 
