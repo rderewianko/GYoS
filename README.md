@@ -1,3 +1,6 @@
+# This is a hackathon project for [#JNUC2017](https://www.jamf.com/events/jamf-nation-user-conference/2017/)
+### We decided to move to *github* as Charles informed us that Joel did. 
+
 # GYoS - Get Your Stuff
 
 ## Self Service Item Store for Jamf Pro
