@@ -30,7 +30,6 @@ if [[ ! -a "$pashLoc$pashuaApp" ]]
 then
 	echo "Pashua Not Found."
 	sudo jamf policy -event installPashua
-	exit 0
 else
 	echo "Pashua Found."
 fi
