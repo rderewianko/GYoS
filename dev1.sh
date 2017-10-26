@@ -8,6 +8,7 @@ pashLoc="/Applications/Utilities/"
 pashuaApp="Pashua.app"
 
 pashBinLoc="/Applications/Utilities/Pashua.app/Contents/MacOS/Pashua"
+pashShLoc="/Applications/Utilities/Pashua.app/Contents/Resources/pashua.sh"
 
 
 itemName="$4"
@@ -37,7 +38,7 @@ fi
 
 
 # Include pashua.sh to be able to use the 2 functions defined in that file
-source "$MYDIR/pashua.sh"
+source "$pashShLoc"
 
 # Define what the dialog should be like
 # Take a look at Pashua's Readme file for more info on the syntax
