@@ -6,7 +6,7 @@
 ## Self Service Item Store for Jamf Pro
 
 Get Your Stuff (GYoS) is a customizable framework for creating an Item Store in the Jamf Pro Self Service app.
-
+It's the idea of a webstore in self service where users can order peripherals. Right nowk, it generates a ticket to an email. 
 ## Documentation
 
 ### Create a Pashua Install PKG
